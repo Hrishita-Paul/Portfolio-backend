@@ -6,6 +6,9 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+app.get('/', (req, res) => {
+    res.send('Welcome to the Portfolio Backend API');
+});
 
 // Connect to MongoDB
 mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost:27017/portfolio', {
